@@ -8,14 +8,11 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style>
-    .jumbotron {
-      background-image: url('./img/keyboard.jpeg');
-      background-size: cover;
-      margin-bottom: 0px;
-      height: 100vh;
-      color: white;
-      text-shadow: rgb(2, 41, 2) 0.3em 0.3em 0.3em;
-      text-align: center;
+    .container {
+      background-color: grey !important;
+    }
+    body {
+      background-image: url("./img/spiration dark.png");
     }
     .btn {
       text-shadow: rgb(2, 41, 2) 0.3em 0.3em 0.3em;
@@ -56,20 +53,19 @@
       </ul>
     </div>
   </nav>
-  <div class="jumbotron">
-    <div class="row">
-      <div class="mx-auto">
-        <img src="./img/dylan.jpg" class="rounded-circle" style="height:400px; width:380px">
-        <h1>Dylan Leard</h1>
-        <h2>BSc Computer Science / Software Engineering</h2>
-        <br>
-        
-          <button type="button" class="btn btn-basic" onclick="location.href='profile.html'">Profile</button>
-          <button type="button" class="btn btn-basic">Code</button>
-          <button type="button" class="btn btn-basic">Contact</button>
-          
-      </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" style="margin-top:100px">
+        <h1>Profile Header</h1>
+        <hr>
+        <p>Profile blah blah blah stuff</p>
+      </div>
+      <div class="col-lg-8">
+        <div class='embed-responsive' style='height:100vh'>
+          <object data='Resume_Online.pdf' type='application/pdf' width='100%' height='100%'></object>
+        </div>
+      </div>  
     </div>
   </div>
 
@@ -78,8 +74,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
-
-
-
 </html>
