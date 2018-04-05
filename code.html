@@ -62,7 +62,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="./contact/formpage.html">Contact</a>
-          </li>
+        </li>
       </ul>
     </div>
   </nav>
@@ -77,12 +77,15 @@
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#ex1">Arithmetic Progression</a>
         </li>
-        <li class="nave-itme">
+        <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#ex2">Prime Factor Decomposition</a>
         </li>
-        <li class="nave-itme">
-            <a class="nav-link" data-toggle="tab" href="#ex3">Range Extraction</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#ex3">Range Extraction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#ex4">Regex Password Validation</a>
+        </li>  
       </ul>
       
       <div class="tab-content">
@@ -148,8 +151,7 @@
                 }
                 if (!uniqueArray.includes(numArray[numArray.length-1])) uniqueArray.push(numArray[numArray.length-1])
                 let primeString = ''
-                console.log(numArray)
-                console.log(uniqueArray)
+                
                 for(let i=0; i&lt;uniqueArray.length; i++) {
                   let count=0
                   for (let j=0; j&lt;numArray.length; j++) {
@@ -227,9 +229,21 @@
              }
           </code></pre>
         </div>
-        <div id="menu3" class="tab-pane fade">
-          <h3>Menu 3</h3>
-          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <div id="ex4" class="tab-pane fade" style="overflow-y:scroll; height:70vh;">
+            <pre><code class="language-javascript">
+                /*Write a regex that will validate a password to make sure it meets the following criteria:
+
+                At least six characters long
+                contains a lowercase letter
+                contains an uppercase letter
+                contains a number
+
+                Valid passwords will only be alphanumeric characters.*/
+              
+                function validate(password) {
+                  return /^\w*(?=.{6,})(?=.*\d)(?=\w*[a-z])(?=\w*[A-Z])\w*$/.test(password);
+                }
+            </code></pre>  
         </div>
       </div>
     </div>
