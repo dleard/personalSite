@@ -5,12 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>HTML Email Form With Attachment - reusable form</title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <link rel="stylesheet" href="form.css" >
-        <script src="form.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
              .container {
       background-color:white !important;
@@ -70,8 +65,9 @@
                 <div class="col-lg-6 offset-lg-3">
                     <h2>Contact</h2> Got a question? Feedback? Awesome! 
                     <p> Send me a message form below and I will get back to you quick as I can. </p>
-                    <form role="form" method="post" id="reused_form" enctype=&quot;multipart/form-data&quot; >
-                        <div class="form-group centered">
+                    <form role="form"  action="https://formspree.io/your@email.com"
+                    method="POST" method="post" id="reused_form" enctype=&quot;multipart/form-data&quot; >
+                        <div class="form-group">
                             <label for="name"> Name:</label>
                             <input type="text" class="form-control" id="name" name="name" required maxlength="50">
                         </div>
@@ -85,7 +81,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name"> Attachment:</label>
-                            <input type="file" class="form-control" id="image" name="image" required>
+                            <input type="file" class="form-control" id="image" name="image">
                         </div>
                         <button type="submit" class="btn btn-lg btn-success float-right" style="margin-bottom:20px" id="btnContactUs">Send &rarr;</button>
                     </form>
