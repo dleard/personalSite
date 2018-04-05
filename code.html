@@ -80,6 +80,9 @@
         <li class="nave-itme">
           <a class="nav-link" data-toggle="tab" href="#ex2">Ex 2</a>
         </li>
+        <li class="nave-itme">
+            <a class="nav-link" data-toggle="tab" href="#ex3">Ex 2</a>
+          </li>
       </ul>
       
       <div class="tab-content">
@@ -189,9 +192,29 @@
             }
           </code></pre>
         </div>
-        <div id="menu2" class="tab-pane fade">
-          <h3>Menu 2</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <div id="ex3" class="tab-pane fade" style="overflow-y:scroll; height:70vh;">
+          <pre><code class="language-javascript">
+            function solution(list){
+              const range = []
+              let string = ''
+              for(let i=0; i&lt;list.length-1; i++) {
+                const a = list[i]-1
+                const b = list[i]+1
+                let sRange
+                let eRange
+                if ((list[i+1] === list[i]-1 || list[i+1] === list[i]+1) &amp;&amp; (list[i+2] === list[i]-2 || list[i+2] === list[i]+2)) {
+                  sRange = list[i]
+                  while(list[i+1] === list[i]-1 || list[i+1] === list[i]+1) {
+                    i++
+                  }
+                  eRange = list[i]
+                  string +=(String(sRange) + '-' + String(eRange)) + ','
+                }
+                else string += String(list[i]) + ','
+              }
+              return string = string.substring(0, string.length - 1)
+             }
+          </code></pre>
         </div>
         <div id="menu3" class="tab-pane fade">
           <h3>Menu 3</h3>
