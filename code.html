@@ -6,10 +6,15 @@
   <meta name="viewport" content="width = device-width, initial-scale = 1">
   <title>Dylan Leard | Software Developer</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
 
   <style>
+    
+    .nav-link {
+      color: black;
+    }
     .container {
-      background-color: grey !important;
+      background-color:white !important;
     }
     body {
       background-image: url("./img/spiration dark.png");
@@ -24,7 +29,15 @@
     .btn:focus {
       text-shadow: rgb(2, 41, 2) 0.3em 0.3em 0.3em;
       box-shadow: rgb(2, 41, 2) 0.3em 0.3em 0.3em;
-}
+   }
+    body {
+    padding-top: 60px;
+    }
+    @media (max-width: 979px) {
+      body {
+        padding-top: 0px;
+      }
+    }
   </style>
 
 </head>
@@ -55,23 +68,88 @@
   </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4" style="margin-top:100px">
-        <h1>Profile Header</h1>
-        <hr>
-        <p>Profile blah blah blah stuff</p>
-      </div>
-      <div class="col-lg-8">
-        <div class='embed-responsive' style='height:100vh'>
-          <object data='Resume_Online.pdf' type='application/pdf' width='100%' height='100%'></object>
+      
+      <h2>Code Examples</h2>
+      <p>Below are some code snippets. If you would like to see more of my work please visit my <a href='http://github.com/dleard'>github</a> page</p>
+     
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nave-itme">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+        </li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="home" class="tab-pane active" style="overflow-y:scroll; height:75vh;">
+          <pre><code class="language-javascript">
+              var findMissing = function (list) {  
+                let diffArray = []
+                let difference = 0
+                let missing
+                for(let i=0; i&lt;3; i++) {
+                  diffArray.push(Math.abs(list[i+1] - list[i]))
+                }
+                if (diffArray[0] === diffArray[1] &amp;&amp; diffArray[1] === diffArray[2]) difference = diffArray[0]
+                else { 
+                  diffArray = diffArray.slice(0,2)
+                  difference = Math.min(...diffArray) 
+                }  
+                for (let i=0; i&lt;list.length-1; i++) {
+                  if(Math.abs(list[i+1] - list[i]) !== difference) {
+                    if(list[i] &lt; list[i+1])
+                      missing = list[i]+difference
+                    else missing = list[i] - difference 
+                  }
+                }  
+                return missing ;
+              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              d
+          </code></pre>
         </div>
-      </div>  
+        <div id="menu1" class="tab-pane fade">
+          <h3>Menu 1</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <h3>Menu 2</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+          <h3>Menu 3</h3>
+          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+      </div>
     </div>
-  </div>
+
+  
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
 </html>
