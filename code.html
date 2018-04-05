@@ -70,20 +70,31 @@
   <div class="container">
       
       <h2>Code Examples</h2>
-      <p>Below are some code snippets. If you would like to see more of my work please visit my <a href='http://github.com/dleard'>github</a> page</p>
+      <p>Below are some code snippets, most of which are my solutions to problems from <a href="http://wwww.codewars.com">codewars.com</a>.</p>
+      <p>If you would like to see more of my work please visit my <a href='http://github.com/dleard'>github</a> page</p>
      
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+          <a class="nav-link active" data-toggle="tab" href="#ex1">Ex 1</a>
         </li>
         <li class="nave-itme">
-          <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+          <a class="nav-link" data-toggle="tab" href="#ex2">Ex 2</a>
         </li>
       </ul>
       
       <div class="tab-content">
-        <div id="home" class="tab-pane active" style="overflow-y:scroll; height:75vh;">
+        <div id="ex1" class="tab-pane active" style="overflow-y:scroll; height:70vh;">
           <pre><code class="language-javascript">
+              /*An Arithmetic Progression is defined as one in which there is a constant difference 
+              between the consecutive terms of a given series of numbers. You are provided with consecutive 
+              elements of an Arithmetic Progression. There is however one hitch: exactly one term from the 
+              original series is missing from the set of numbers which have been given to you. The rest of 
+              the given series is the same as the original AP. Find the missing term.
+              You have to write the function findMissing(list), list will always be at least 3 numbers.
+              The missing term will never be the first or last one.
+              Sample input: findMissing([1,3,5,9,11]) == 7
+              */
+
               var findMissing = function (list) {  
                 let diffArray = []
                 let difference = 0
@@ -105,33 +116,78 @@
                 }  
                 return missing ;
               }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              d
           </code></pre>
         </div>
-        <div id="menu1" class="tab-pane fade">
-          <h3>Menu 1</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div id="ex2" class="tab-pane fade" style="overflow-y:scroll; height:70vh;">
+          <pre><code class="language-javascript">
+              /*Given a positive number n > 1 find the prime factor decomposition of n. 
+              The result will be a string with the following form :
+                
+              "(p1**n1)(p2**n2)...(pk**nk)"
+              
+              with the p(i) in increasing order and n(i) empty if n(i) is 1.
+              
+              Example: n = 86240 should return "(2**5)(5)(7**2)(11)"
+              */
+                  
+              function primeFactors(n){
+                numArray = [n]
+                uniqueArray = []
+                if (isPrime(n)) return '(' + n + ')'
+                let index = 0
+                while(allPrimes(numArray) === false) {
+                  const num = firstPrime(numArray[index])
+                  const q = numArray[index] / num
+                  numArray[index] = num
+                  if(!uniqueArray.includes(num)) uniqueArray.push(num)
+                  numArray.push(q)
+                  index++
+                }
+                if (!uniqueArray.includes(numArray[numArray.length-1])) uniqueArray.push(numArray[numArray.length-1])
+                let primeString = ''
+                console.log(numArray)
+                console.log(uniqueArray)
+                for(let i=0; i&lt;uniqueArray.length; i++) {
+                  let count=0
+                  for (let j=0; j&lt;numArray.length; j++) {
+                    if(uniqueArray[i] === numArray[j]){
+                      count++
+                    }
+                  }
+                  if (count &gt; 1) primeString += '(' + uniqueArray[i] + '**' + count + ')'
+                  else primeString += '(' + uniqueArray[i] + ')'
+                }
+                return primeString
+            }
+            
+            function firstPrime(n){
+              let prime = 0
+              let num = 2
+              while(1) {
+                if (n % num === 0) { 
+                  prime = num
+                  return prime
+                }  
+                num++
+              }
+            }
+            
+            function isPrime(value) {
+                for(let i = 2; i &lt; value; i++) {
+                    if(value % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            function allPrimes(array) {
+              let allPrime = true
+              for(let i=0; i&lt;array.length; i++) 
+                if (!isPrime(array[i])) allPrime = false
+              return allPrime  
+            }
+          </code></pre>
         </div>
         <div id="menu2" class="tab-pane fade">
           <h3>Menu 2</h3>
